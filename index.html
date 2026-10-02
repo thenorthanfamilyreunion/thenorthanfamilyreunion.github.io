@@ -1,43 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>The Northan Family Reunion</title>
-  <meta name="description" content="The official website of The Northan Family Reunion, celebrating the legacy of Big Bill and Minnie Northan.">
 
-  <!-- Givebutter Widget Library -->
+  <meta
+    name="description"
+    content="The official website of The Northan Family Reunion, celebrating the legacy of Big Bill and Minnie Northan."
+  >
+
+  <!-- GIVEBUTTER WIDGET LIBRARY -->
   <script
     async
     src="https://widgets.givebutter.com/latest.umd.cjs?acct=KzAPLhn8NjRKMIm4&p=other">
   </script>
 
+
   <style>
+
+    /* =========================
+       COLOR PALETTE
+       ========================= */
+
+    :root {
+      --purple: #5B2A86;
+      --deep-purple: #35155D;
+      --gold: #F4B942;
+      --deep-gold: #D99A16;
+      --teal: #087E8B;
+      --deep-teal: #05606A;
+      --coral: #E85D4A;
+      --cream: #FFF8E7;
+      --soft-gold: #FFF0C2;
+      --soft-teal: #E4F5F5;
+      --white: #FFFFFF;
+      --dark: #29232F;
+    }
+
+
     * {
       box-sizing: border-box;
     }
+
 
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: #292929;
-      background: #faf8f3;
+      color: var(--dark);
+      background: var(--cream);
       line-height: 1.6;
     }
 
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
     nav {
-      background: #171717;
+      background: var(--deep-purple);
       padding: 16px 25px;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 4px solid var(--gold);
+      box-shadow: 0 3px 10px rgba(0,0,0,.18);
     }
+
 
     nav a {
       color: white;
@@ -47,191 +87,513 @@
       font-weight: bold;
     }
 
+
     nav a:hover {
-      text-decoration: underline;
+      color: var(--gold);
     }
+
+
+
+    /* =========================
+       HERO
+       ========================= */
 
     .hero {
-      background: #242424;
       color: white;
       text-align: center;
-      padding: 90px 25px;
+      padding: 85px 25px 90px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(244,185,66,.30),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          var(--deep-purple) 0%,
+          var(--purple) 48%,
+          var(--teal) 100%
+        );
     }
+
 
     .hero h1 {
-      font-size: 52px;
+      font-size: 56px;
       margin: 0 0 10px;
       letter-spacing: 1px;
+      text-shadow: 0 3px 8px rgba(0,0,0,.25);
     }
+
 
     .hero .legacy {
-      font-size: 23px;
+      font-size: 24px;
       margin: 5px 0;
+      color: #FFF2C8;
     }
 
+
     .hero .theme {
-      margin-top: 25px;
-      font-size: 17px;
-      letter-spacing: 3px;
+      display: inline-block;
+      margin-top: 24px;
+      padding: 8px 18px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 4px;
       text-transform: uppercase;
+      color: var(--deep-purple);
+      background: var(--gold);
+      border-radius: 30px;
     }
+
+
+
+    /* =========================
+       BIG BILL & MINNIE PHOTO
+       ========================= */
+
+    .hero-photo {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 38px auto 12px;
+
+      border: 8px solid var(--gold);
+      outline: 4px solid rgba(255,255,255,.85);
+      border-radius: 14px;
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,.35);
+    }
+
+
+    .hero-caption {
+      font-size: 17px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: white;
+    }
+
+
+    .heritage-message {
+      font-size: 20px;
+      margin: 14px auto 5px;
+      max-width: 700px;
+      color: #FFF3D0;
+    }
+
+
+
+    /* =========================
+       BUTTONS
+       ========================= */
 
     .button {
       display: inline-block;
-      background: white;
-      color: #222;
-      padding: 13px 24px;
-      border-radius: 6px;
+      background: var(--gold);
+      color: var(--deep-purple);
+      padding: 14px 28px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 22px;
+      margin-top: 25px;
+      box-shadow: 0 5px 14px rgba(0,0,0,.22);
+      transition: transform .2s ease, background .2s ease;
     }
 
+
+    .button:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+
+
+    /* =========================
+       GENERAL SECTIONS
+       ========================= */
+
     .section {
-      max-width: 950px;
+      max-width: 1000px;
       margin: auto;
-      padding: 70px 25px;
+      padding: 75px 25px;
       text-align: center;
     }
 
+
     .section h2 {
-      font-size: 34px;
+      font-size: 36px;
+      color: var(--purple);
+      margin-top: 0;
       margin-bottom: 15px;
     }
+
+
+    .section h2::after {
+      content: "";
+      display: block;
+      width: 75px;
+      height: 5px;
+      background: var(--gold);
+      margin: 15px auto 25px;
+      border-radius: 10px;
+    }
+
 
     .section p {
       max-width: 760px;
       margin-left: auto;
       margin-right: auto;
+      font-size: 17px;
     }
 
+
+
+    /* =========================
+       WELCOME
+       ========================= */
+
+    .welcome {
+      background: var(--cream);
+    }
+
+
+    .welcome h2 {
+      color: var(--teal);
+    }
+
+
+
+    /* =========================
+       REUNION 2027
+       ========================= */
+
     .reunion {
+      max-width: none;
+      background:
+        linear-gradient(
+          135deg,
+          #FFF0C2 0%,
+          #FFE0B8 100%
+        );
+    }
+
+
+    .reunion-card {
+      max-width: 700px;
+      margin: 30px auto 0;
+      padding: 40px;
+      border-radius: 18px;
+      background: white;
+      border-top: 8px solid var(--coral);
+
+      box-shadow:
+        0 8px 25px rgba(91,42,134,.13);
+    }
+
+
+    .reunion-card h3 {
+      color: var(--coral);
+      font-size: 29px;
+      margin-top: 0;
+    }
+
+
+    .reunion-date {
+      display: inline-block;
+      background: var(--purple);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+
+    .coming-soon {
+      color: var(--teal);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+
+
+    /* =========================
+       FAMILY LEGACY
+       ========================= */
+
+    .family {
+      max-width: none;
+      background: var(--soft-teal);
+    }
+
+
+    .family h2 {
+      color: var(--deep-teal);
+    }
+
+
+
+    /* =========================
+       STAY CONNECTED
+       ========================= */
+
+    .signup-section {
+      max-width: none;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--purple),
+          var(--deep-purple)
+        );
+
+      color: white;
+    }
+
+
+    .signup-section h2 {
+      color: var(--gold);
+    }
+
+
+    .signup-section h2::after {
       background: white;
     }
 
-    .reunion-card {
-      max-width: 650px;
-      margin: 30px auto 0;
-      padding: 35px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      background: #faf8f3;
+
+    .signup-box {
+      max-width: 720px;
+      margin: 35px auto 0;
+      background: white;
+      padding: 38px;
+      border-radius: 18px;
+
+      border-top: 7px solid var(--gold);
+
+      box-shadow:
+        0 12px 35px rgba(0,0,0,.25);
     }
 
-    .reunion-card h3 {
+
+
+    /* =========================
+       REGISTRATION
+       ========================= */
+
+    .registration {
+      background: var(--cream);
+    }
+
+
+    .registration-box {
+      max-width: 700px;
+      margin: 30px auto 0;
+      padding: 40px;
+      border-radius: 18px;
+      background: white;
+
+      border-left: 8px solid var(--teal);
+      border-right: 8px solid var(--gold);
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,.09);
+    }
+
+
+    .registration-box h3 {
+      color: var(--coral);
       font-size: 27px;
       margin-top: 0;
     }
 
-    .coming-soon {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
 
-    .signup-section {
-      background: #efebe2;
-    }
 
-    .signup-box {
-      max-width: 720px;
-      margin: 30px auto 0;
-      background: white;
-      padding: 35px;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.08);
-    }
-
-    .family {
-      background: white;
-    }
-
-    .registration-box {
-      max-width: 650px;
-      margin: 30px auto 0;
-      padding: 35px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      background: white;
-    }
+    /* =========================
+       FOOTER
+       ========================= */
 
     footer {
-      background: #171717;
+      background:
+        linear-gradient(
+          135deg,
+          var(--deep-purple),
+          var(--teal)
+        );
+
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 45px 20px;
+
+      border-top: 6px solid var(--gold);
     }
+
 
     footer p {
-      margin: 5px;
+      margin: 6px;
     }
 
+
+    footer strong {
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 700px) {
-      .hero {
-        padding: 65px 20px;
+
+      nav {
+        padding: 12px 10px;
       }
 
-      .hero h1 {
-        font-size: 36px;
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+        font-size: 13px;
       }
+
+
+      .hero {
+        padding: 55px 18px 65px;
+      }
+
+
+      .hero h1 {
+        font-size: 38px;
+        line-height: 1.15;
+      }
+
 
       .hero .legacy {
         font-size: 19px;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 6px 8px;
+
+      .hero .theme {
         font-size: 13px;
+        letter-spacing: 2px;
       }
+
+
+      .hero-photo {
+        max-width: 100%;
+        border-width: 5px;
+      }
+
 
       .section {
-        padding: 50px 20px;
+        padding: 55px 20px;
       }
 
+
       .section h2 {
-        font-size: 28px;
+        font-size: 30px;
       }
+
+
+      .reunion-card,
+      .signup-box,
+      .registration-box {
+        padding: 28px 20px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
+
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
   <nav>
+
     <a href="#home">Home</a>
+
     <a href="#reunion">Reunion 2027</a>
+
     <a href="#family">Our Family</a>
+
     <a href="#connect">Stay Connected</a>
+
     <a href="#registration">Registration</a>
+
   </nav>
 
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
   <header class="hero" id="home">
 
+
     <h1>The Northan Family Reunion</h1>
+
 
     <p class="legacy">
       Celebrating the Legacy of Big Bill &amp; Minnie Northan
     </p>
 
+
     <p class="theme">
       Family • Legacy • Love
     </p>
 
+
+
+    <!-- ORIGINAL PHOTO OF BIG BILL & MINNIE -->
+
+    <img
+      src="Big Bill and Minnie.jpg"
+      alt="William Big Bill Northan Sr. and Minnie Snead Northan"
+      class="hero-photo"
+    >
+
+
+    <p class="hero-caption">
+      William “Big Bill” Northan Sr. &amp; Minnie Snead Northan
+    </p>
+
+
+    <p class="heritage-message">
+      Honoring our past. Celebrating our present. Building our future.
+    </p>
+
+
     <a class="button" href="#connect">
-      Join Our Family Contact List
+      Stay Connected
     </a>
+
 
   </header>
 
 
-  <!-- WELCOME -->
-  <section class="section">
+
+  <!-- =========================
+       WELCOME
+       ========================= -->
+
+  <section class="section welcome">
+
 
     <h2>Welcome Home, Family!</h2>
+
 
     <p>
       Welcome to the official home of The Northan Family Reunion.
@@ -240,25 +602,40 @@
       another memorable gathering of the Northan family.
     </p>
 
+
     <p>
       Whether you live near or far, we invite you to reconnect with
       family, celebrate our legacy, and help us continue building
       memories for generations to come.
     </p>
 
+
   </section>
 
 
-  <!-- 2027 REUNION -->
+
+  <!-- =========================
+       REUNION 2027
+       ========================= -->
+
   <section class="section reunion" id="reunion">
+
 
     <h2>Northan Family Reunion 2027</h2>
 
+
     <div class="reunion-card">
+
 
       <h3>We're Getting the Family Together!</h3>
 
-      <p><strong>July 2027</strong></p>
+
+      <p>
+        <span class="reunion-date">
+          July 2027
+        </span>
+      </p>
+
 
       <p>
         Plans are underway for our next Northan Family Reunion.
@@ -266,29 +643,45 @@
         accommodations, activities, registration, and other details.
       </p>
 
+
       <p class="coming-soon">
         More Information Coming Soon
       </p>
 
+
       <p>
-        Join our family contact list below so you are among the first
+        Join our family contact list so you are among the first
         to receive official reunion announcements.
       </p>
 
+
+      <a class="button" href="#connect">
+        Join the Family Contact List
+      </a>
+
+
     </div>
+
 
   </section>
 
 
-  <!-- FAMILY LEGACY -->
+
+  <!-- =========================
+       FAMILY LEGACY
+       ========================= -->
+
   <section class="section family" id="family">
 
+
     <h2>Our Family Legacy</h2>
+
 
     <p>
       The Northan Family Reunion celebrates the family and descendants
       of William “Big Bill” Northan Sr. and Minnie Snead Northan.
     </p>
+
 
     <p>
       Their legacy continues through generations of children,
@@ -296,19 +689,27 @@
       throughout the country.
     </p>
 
+
     <p>
       This website will continue to grow as we preserve our family
       history, photographs, stories, genealogy, and memories for
       generations to come.
     </p>
 
+
   </section>
 
 
-  <!-- GIVEBUTTER SIGNUP -->
+
+  <!-- =========================
+       STAY CONNECTED
+       ========================= -->
+
   <section class="section signup-section" id="connect">
 
+
     <h2>Stay Connected</h2>
+
 
     <p>
       We are building our official Northan Family contact list.
@@ -317,29 +718,47 @@
       activities, deadlines, and family announcements.
     </p>
 
+
     <p>
       Even if you're not sure whether you'll attend the reunion,
       we would still love to keep you connected with the family.
     </p>
 
+
+
     <div class="signup-box">
 
-      <!-- Givebutter Signup Form -->
+
+      <!-- GIVEBUTTER SIGNUP FORM -->
+
       <givebutter-widget id="gBZb28"></givebutter-widget>
 
+
     </div>
+
 
   </section>
 
 
-  <!-- REGISTRATION -->
-  <section class="section" id="registration">
+
+  <!-- =========================
+       REGISTRATION & PAYMENTS
+       ========================= -->
+
+  <section
+    class="section registration"
+    id="registration"
+  >
+
 
     <h2>Registration &amp; Payments</h2>
 
+
     <div class="registration-box">
 
-      <h3>Coming Soon</h3>
+
+      <h3>Coming Soon!</h3>
+
 
       <p>
         Official registration and payment information for the
@@ -347,30 +766,46 @@
         planning committee finalizes reunion details.
       </p>
 
+
       <p>
-        Please join the family contact list above so you don't miss
-        registration announcements and important deadlines.
+        Join the family contact list above so you don't miss
+        registration announcements, payment information, or
+        important deadlines.
       </p>
 
+
     </div>
+
 
   </section>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
   <footer>
 
-    <p><strong>The Northan Family Reunion</strong></p>
+
+    <p>
+      <strong>The Northan Family Reunion</strong>
+    </p>
+
 
     <p>
       Celebrating the Legacy of Big Bill &amp; Minnie Northan
     </p>
 
+
     <p>
       Family • Legacy • Love
     </p>
 
+
   </footer>
 
+
 </body>
+
 </html>
